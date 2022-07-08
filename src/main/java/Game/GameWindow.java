@@ -1,7 +1,6 @@
 package Game;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Frame {
     private final JFrame frame;
@@ -12,7 +11,8 @@ public class Frame {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
-
+        frame.setContentPane(new GameField());
+        frame.addKeyListener(new InputHandler());
     }
 
 }
