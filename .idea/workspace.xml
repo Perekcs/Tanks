@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +38,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\prors\IdeaProjects\Tanks\src\main\resources\Tiles" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657292778998</updated>
       <workItem from="1657292781021" duration="37000" />
+      <workItem from="1657293241750" duration="591000" />
     </task>
     <servers />
   </component>
