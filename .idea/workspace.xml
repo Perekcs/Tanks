@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Maps/test_map.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2022_18_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2022_18_50__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Game/ImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/maps/test_map_1.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game/FieldPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/FieldPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Maps/test_map.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/maps/test_map.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_enemy_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_enemy_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_enemy_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_enemy_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_enemy_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_enemy_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_enemy_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_enemy_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_player_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_player_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_player_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_player_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_player_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_player_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tanks/tank_player_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tanks/tank_player_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_12.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Tiles/tile_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/tile_9.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +62,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/prors/IdeaProjects/Tanks/src/main/resources/Maps"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -50,6 +72,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\prors\IdeaProjects\Tanks\src\main\resources\Maps" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\prors\IdeaProjects\Tanks\src\main\resources\Maps" />
       <recent name="C:\Users\prors\IdeaProjects\Tanks" />
