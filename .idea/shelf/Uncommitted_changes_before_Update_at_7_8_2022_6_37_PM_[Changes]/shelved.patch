@@ -1,0 +1,50 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"04b284e8-10bc-4797-b052-2b9e4de60baf\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_0.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_1.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_10.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_11.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_12.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_13.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_2.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_3.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_4.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_5.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_6.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_7.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_8.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/Tiles/tile_9.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BfMdy5T6hJMYj7bytcGIqPq0pw\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\\src\\main\\resources\\Tiles\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"04b284e8-10bc-4797-b052-2b9e4de60baf\" name=\"Changes\" comment=\"\" />\r\n      <created>1657292778998</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657292778998</updated>\r\n      <workItem from=\"1657292781021\" duration=\"37000\" />\r\n      <workItem from=\"1657293241750\" duration=\"591000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f1b9a9474d1c0183e28d4f963900a508ee60ad94)
++++ b/.idea/workspace.xml	(date 1657294652590)
+@@ -5,20 +5,6 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_0.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_1.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_10.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_11.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_12.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_13.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_2.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_3.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_4.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_5.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_6.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_7.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_8.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tiles/tile_9.png" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -42,7 +28,8 @@
+   &quot;keyToString&quot;: {
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+   }
+ }</component>
+   <component name="RecentsManager">
+@@ -60,6 +47,8 @@
+       <updated>1657292778998</updated>
+       <workItem from="1657292781021" duration="37000" />
+       <workItem from="1657293241750" duration="591000" />
++      <workItem from="1657293847974" duration="43000" />
++      <workItem from="1657293901465" duration="746000" />
+     </task>
+     <servers />
+   </component>
