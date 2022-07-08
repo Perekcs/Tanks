@@ -2,17 +2,15 @@ package Game;
 
 import javax.swing.*;
 
-public class Frame {
-    private final JFrame frame;
-
-    public Frame() {
-        frame = new JFrame("Tanks Game");
-        frame.setSize(640, 640);
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setContentPane(new GameField());
-        frame.addKeyListener(new InputHandler());
+public class GameWindow extends JFrame {
+    public GameWindow() {
+        super("Tanks game");
+        setSize(640, 640);
+        setResizable(false);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
+        setContentPane(new FieldPanel());
+        addKeyListener(new InputHandler());
     }
 
 }
