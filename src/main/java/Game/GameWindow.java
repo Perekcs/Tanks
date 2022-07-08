@@ -8,9 +8,9 @@ public class GameWindow extends JFrame {
         setSize(640, 640);
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
         setContentPane(new FieldPanel());
         addKeyListener(new InputHandler());
+        setVisible(true);
     }
 
 }
