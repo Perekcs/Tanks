@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Game/SimpleVector2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/maps/test_map_2.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/FieldPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/FieldPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
