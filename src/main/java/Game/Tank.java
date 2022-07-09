@@ -3,14 +3,15 @@ package Game;
 import javax.swing.*;
 import java.awt.*;
 
-public abstract class Tank  {
+public abstract class Tank extends MapObject2D {
     private int hp;
     private final int speed;
     private byte direction;
     private SimpleVector2 position;
 
 
-    protected Tank(int hp, int speed, byte direction) {
+    protected Tank(GameMap2D map, int hp, int speed, byte direction, SimpleVector2 position) {
+        super(map, new SimpleVector2(32, 32), position);
         this.hp = hp;
         this.speed =speed;
         this.direction =direction;
