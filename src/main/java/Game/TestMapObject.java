@@ -21,6 +21,10 @@ public class TestMapObject extends MapObject2D {
             position.setY(1);
             return;
         }
+        if (map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) == 5) {
+            map.getMapData().setTile((int) tilePos.getX(), (int) tilePos.getY(), 0);
+            destroy();
+        }
         g.setColor(map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) != 0 ? GameMap2D.COLLISION_COLOR : GameMap2D.COLLIDER_COLOR);
         SimpleVector2 mapPos = map.positionToMap(position);
         g.fillRect((int) mapPos.getX(), (int) mapPos.getY(), map.getTileWidth(), map.getTileHeight());

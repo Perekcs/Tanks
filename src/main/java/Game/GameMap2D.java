@@ -16,6 +16,7 @@ public class GameMap2D {
     private final Image[] tanks;
     public static final Color COLLIDER_COLOR = new Color(30, 255, 255, 124);
     public static final Color COLLISION_COLOR = new Color(255, 234, 5, 157);
+    private final LinkedList<MapObject2D> markedForRemoval;
     private final LinkedList<MapObject2D> mapObjects;
 
     public GameMap2D(Map mapData, int width, int height) {
@@ -27,9 +28,14 @@ public class GameMap2D {
         tiles = loadTiles();
         tanks = loadTanks();
         mapObjects = new LinkedList<>();
-        addMapObject(new TestMapObject(this, 0.5f));
-        addMapObject(new TestMapObject(this, 1f));
-        addMapObject(new TestMapObject(this, 1.5f));
+        markedForRemoval = new LinkedList<>();
+        addMapObject(new Projectile(this, new SimpleVector2(0, 100), 2F, (byte) 1, false));
+        addMapObject(new Projectile(this, new SimpleVector2(50, 100), 2F, (byte) 1, false));
+        addMapObject(new Projectile(this, new SimpleVector2(0, 200), 2F, (byte) 1, false));
+        addMapObject(new Projectile(this, new SimpleVector2(0, 300), 2F, (byte) 1, false));
+        addMapObject(new Projectile(this, new SimpleVector2(0, 400), 2F, (byte) 1, false));
+        addMapObject(new Projectile(this, new SimpleVector2(0, 500), 2F, (byte) 1, false));
+        addMapObject(new Projectile(this, new SimpleVector2(0, 600), 2F, (byte) 1, false));
     }
 
     private Image[] loadTiles() {
@@ -70,6 +76,8 @@ public class GameMap2D {
                 g.drawImage(tile, tileWidth * x, tileHeight * y, tileWidth, tileHeight, null);
             }
         }
+        mapObjects.removeAll(markedForRemoval);
+        markedForRemoval.clear();
         for (var mapObject: mapObjects) {
             mapObject.paint(positionToMap(mapObject.getPosition()), g);
         }
@@ -97,6 +105,10 @@ public class GameMap2D {
 
     public void addMapObject(MapObject2D object2D) {
         mapObjects.add(Objects.requireNonNull(object2D));
+    }
+
+    public void removeMapObject(MapObject2D object2D) {
+        markedForRemoval.add(object2D);
     }
 
     public SimpleVector2 positionToTile(SimpleVector2 position) {

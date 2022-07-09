@@ -21,6 +21,10 @@ public abstract class MapObject2D {
         return size;
     }
 
+    public void destroy() {
+        map.removeMapObject(this);
+    }
+
     public void paint(SimpleVector2 position, Graphics g) {
         paint((int) position.getX(), (int) position.getY(), g);
     }
