@@ -53,7 +53,7 @@ public final class Map {
         return height;
     }
 
-    public boolean isValidPosition(int x, int y) {
+    public boolean isValidTile(int x, int y) {
         return x >= 0 && x < width && y >= 0 && y < height;
     }
 
@@ -68,7 +68,7 @@ public final class Map {
     }
 
     private void requireValid(int x, int y) {
-        if (!isValidPosition(x, y))
+        if (!isValidTile(x, y))
             throw new IndexOutOfBoundsException(String.format("Position (%d, %d) is outside the map", x, y));
     }
 }
