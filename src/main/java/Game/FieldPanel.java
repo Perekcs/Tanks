@@ -11,6 +11,8 @@ public class FieldPanel extends JPanel {
     private final Image[] tiles;
     private int frame = 0;
     private static final Dimension SIZE = new Dimension(640, 640);
+    private static final Color COLLIDER_COLOR = new Color(30, 255, 255, 124);
+    private static final Color COLLISION_COLOR = new Color(255, 234, 5, 157);
 
     @Override
     public Dimension getPreferredSize() {
@@ -39,8 +41,6 @@ public class FieldPanel extends JPanel {
         // TODO: render field
         paintMap(g, map);
         frame++;
-        g.setColor(Color.DARK_GRAY);
-        g.fillRect(frame % (getWidth() - 20), frame % (getHeight() - 20), 10, 10);
     }
 
     private void update() {
@@ -68,5 +68,14 @@ public class FieldPanel extends JPanel {
                 g.drawImage(tile, tileWidth * x, tileHeight * y, tileWidth, tileHeight, null);
             }
         }
+
+        g.setColor(Color.DARK_GRAY);
+        int posX = frame % (getWidth() - 20);
+        int posY = frame % (getHeight() - 20);
+        g.fillRect(posX, posY, 10, 10);
+        int tileX = posX / tileWidth;
+        int tileY = posY / tileHeight;
+        g.setColor(map.getTile(tileX, tileY) != 0 ? COLLISION_COLOR : COLLIDER_COLOR);
+        g.fillRect(tileX * tileWidth, tileY * tileHeight, tileWidth, tileHeight);
     }
 }
