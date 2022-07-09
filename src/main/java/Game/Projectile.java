@@ -15,7 +15,7 @@ public class Projectile extends MapObject2D {
     }
 
     @Override
-    public void paint(int x, int y, Graphics g) {
+    public void paint(Graphics g) {
         switch (direction) {
             case 0 -> position.move(0, 1 * speed);
             case 1 -> position.move(1 * speed, 0);

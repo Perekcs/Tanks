@@ -79,7 +79,7 @@ public class GameMap2D {
         mapObjects.removeAll(markedForRemoval);
         markedForRemoval.clear();
         for (var mapObject: mapObjects) {
-            mapObject.paint(positionToMap(mapObject.getPosition()), g);
+            mapObject.paint(g);
         }
     }
 

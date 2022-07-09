@@ -25,9 +25,5 @@ public abstract class MapObject2D {
         map.removeMapObject(this);
     }
 
-    public void paint(SimpleVector2 position, Graphics g) {
-        paint((int) position.getX(), (int) position.getY(), g);
-    }
-
-    public abstract void paint(int x, int y, Graphics g);
+    public abstract void paint(Graphics g);
 }

@@ -11,7 +11,7 @@ public class TestMapObject extends MapObject2D {
     }
 
     @Override
-    public void paint(int x, int y, Graphics g) {
+    public void paint(Graphics g) {
         g.setColor(Color.DARK_GRAY);
         g.fillRect((int) getPosition().getX(), (int) getPosition().getY(), (int) size.getX(), (int) size.getY());
         position.move(1 * speed, 1 * speed);
