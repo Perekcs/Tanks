@@ -1,0 +1,56 @@
+Index: src/main/java/Game/PlayerTank.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Game;\r\n\r\nimport java.awt.*;\r\nimport java.awt.geom.AffineTransform;\r\nimport java.awt.image.AffineTransformOp;\r\nimport java.awt.image.BufferedImage;\r\n\r\npublic class PlayerTank extends Tank {\r\n    Image kabanchik;\r\n    InputHandler kabanchik2;\r\n\r\n    BufferedImage kabanchik3;\r\n    BufferedImage kabanchik4;\r\n\r\n\r\n    protected PlayerTank(GameMap2D map, int hp, int speed, byte direction, SimpleVector2 position,Image image, InputHandler inputHandler) {\r\n        super(map, hp, speed, direction, position);\r\n        kabanchik = image;\r\n        kabanchik2 = inputHandler;\r\n        kabanchik3 = (BufferedImage) kabanchik;\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    public void paint(Graphics g) {\r\n        g.drawImage(kabanchik4, (int) position.getX(), (int) position.getY(), null);\r\n        if(kabanchik2.getMoveHorizontal() == 1){\r\n            setDirection((byte) 1);\r\n            move();\r\n        }\r\n        if(kabanchik2.getMoveHorizontal() == -1){\r\n            setDirection((byte) 3);\r\n            move();\r\n        }\r\n        if(kabanchik2.getMoveVertical() == 1){\r\n            setDirection((byte) 0);\r\n            move();\r\n        }\r\n        if(kabanchik2.getMoveVertical() == -1){\r\n            setDirection((byte) 2);\r\n            move();\r\n        }\r\n    }\r\n    @Override\r\n    protected void setDirection(byte direction){\r\n        super.setDirection(direction);\r\n        final double rads = Math.toRadians(90* direction);\r\n        final double sin = Math.abs(Math.sin(rads));\r\n        final double cos = Math.abs(Math.cos(rads));\r\n        final int w = (int) Math.floor(kabanchik3.getWidth() * cos + kabanchik3.getHeight() * sin);\r\n        final int h = (int) Math.floor(kabanchik3.getHeight() * cos + kabanchik3.getWidth() * sin);\r\n        final BufferedImage rotatedImage = new BufferedImage(w, h, kabanchik3.getType());\r\n        final AffineTransform at = new AffineTransform();\r\n        at.translate(w / 2, h / 2);\r\n        at.rotate(rads,0, 0);\r\n        at.translate(-kabanchik3.getWidth() / 2, -kabanchik3.getHeight() / 2);\r\n        final AffineTransformOp rotateOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);\r\n        kabanchik4 = rotateOp.filter(kabanchik3,rotatedImage);\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Game/PlayerTank.java b/src/main/java/Game/PlayerTank.java
+--- a/src/main/java/Game/PlayerTank.java	(revision d9a1d6f650bcab5993c47367dcb6f530c4fcce2a)
++++ b/src/main/java/Game/PlayerTank.java	(date 1657489567058)
+@@ -8,7 +8,6 @@
+ public class PlayerTank extends Tank {
+     Image kabanchik;
+     InputHandler kabanchik2;
+-
+     BufferedImage kabanchik3;
+     BufferedImage kabanchik4;
+ 
+@@ -24,7 +23,7 @@
+ 
+     @Override
+     public void paint(Graphics g) {
+-        g.drawImage(kabanchik4, (int) position.getX(), (int) position.getY(), null);
++        g.drawImage(kabanchik4, (int) position.getX(), (int) position.getY(),(int)size.getX(),(int)size.getY(), null);
+         if(kabanchik2.getMoveHorizontal() == 1){
+             setDirection((byte) 1);
+             move();
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"04b284e8-10bc-4797-b052-2b9e4de60baf\" name=\"Changes\" comment=\"Initial commit\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Game/InputHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Game/InputHandler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Game/PlayerTank.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Game/PlayerTank.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Game/Tank.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Game/Tank.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BfMdy5T6hJMYj7bytcGIqPq0pw\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"C:/Users/prors/IdeaProjects/Tanks/src/main/resources/maps\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File\": [\r\n      \"TEXT\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\\src\\main\\resources\\maps\" />\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\\src\\main\\resources\\Maps\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\\src\\main\\resources\\Maps\" />\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\" />\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\\src\\main\\resources\\Tanks\" />\r\n      <recent name=\"C:\\Users\\prors\\IdeaProjects\\Tanks\\src\\main\\resources\\Tiles\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Game.Main\" />\r\n      <module name=\"Tanks\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Game.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"04b284e8-10bc-4797-b052-2b9e4de60baf\" name=\"Changes\" comment=\"\" />\r\n      <created>1657292778998</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657292778998</updated>\r\n      <workItem from=\"1657292781021\" duration=\"37000\" />\r\n      <workItem from=\"1657293241750\" duration=\"591000\" />\r\n      <workItem from=\"1657452601591\" duration=\"22381000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d9a1d6f650bcab5993c47367dcb6f530c4fcce2a)
++++ b/.idea/workspace.xml	(date 1657491338491)
+@@ -6,9 +6,7 @@
+   <component name="ChangeListManager">
+     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="Initial commit">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/InputHandler.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Game/PlayerTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/PlayerTank.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Tank.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -94,7 +92,7 @@
+       <updated>1657292778998</updated>
+       <workItem from="1657292781021" duration="37000" />
+       <workItem from="1657293241750" duration="591000" />
+-      <workItem from="1657452601591" duration="22381000" />
++      <workItem from="1657452601591" duration="25542000" />
+     </task>
+     <servers />
+   </component>

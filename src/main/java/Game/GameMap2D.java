@@ -31,13 +31,6 @@ public class GameMap2D {
         mapObjects = new LinkedList<>();
         markedForRemoval = new LinkedList<>();
         pendingObjects = new LinkedList<>();
-        addMapObject(new Projectile(this, new SimpleVector2(0, 100), 2F, (byte) 1, false));
-        addMapObject(new Projectile(this, new SimpleVector2(50, 100), 2F, (byte) 1, false));
-        addMapObject(new Projectile(this, new SimpleVector2(0, 200), 2F, (byte) 1, false));
-        addMapObject(new Projectile(this, new SimpleVector2(0, 300), 2F, (byte) 1, false));
-        addMapObject(new Projectile(this, new SimpleVector2(0, 400), 2F, (byte) 1, false));
-        addMapObject(new Projectile(this, new SimpleVector2(0, 500), 2F, (byte) 1, false));
-        addMapObject(new Projectile(this, new SimpleVector2(0, 600), 2F, (byte) 1, false));
         addMapObject(new PlayerTank(this, 1, 2, (byte) 1, new SimpleVector2(50, 50), tanks[1], inputHandler));
     }
 
