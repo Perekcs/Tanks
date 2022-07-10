@@ -31,7 +31,19 @@ public class GameMap2D {
         mapObjects = new LinkedList<>();
         markedForRemoval = new LinkedList<>();
         pendingObjects = new LinkedList<>();
-        addMapObject(new PlayerTank(this, 1, 2, (byte) 1, new SimpleVector2(50, 50), tanks[1], inputHandler));
+        spawnPlayer(inputHandler);
+    }
+
+    private void spawnPlayer(InputHandler inputHandler) {
+        for (int y = 0; y < mapData.getHeight(); y++)
+            for (int x = 0; x < mapData.getWidth(); x++)
+                if (mapData.getTile(x, y) == 14) {
+                    mapData.setTile(x, y, 0);
+                    addMapObject(new PlayerTank(this, 1, 2, (byte) 1, tileToPosition(x, y), tanks[1], inputHandler));
+                    return;
+                }
+        mapData.setTile(0, 0, 0);
+        addMapObject(new PlayerTank(this, 1, 2, (byte) 1, tileToPosition(0, 0), tanks[1], inputHandler));
     }
 
     private Image[] loadTiles() {
@@ -48,14 +60,14 @@ public class GameMap2D {
 
     private Image[] loadTanks() {
         Image[] tanks = new Image[8];
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             try {
                 tanks[i] = ImageIO.read(Objects.requireNonNull(FieldPanel.class.getResource(String.format("/tanks/tank_player_%d.png", i))));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             try {
                 tanks[i + 4] = ImageIO.read(Objects.requireNonNull(FieldPanel.class.getResource(String.format("/tanks/tank_enemy_%d.png", i))));
             } catch (IOException e) {
@@ -76,7 +88,7 @@ public class GameMap2D {
         markedForRemoval.clear();
         mapObjects.addAll(pendingObjects);
         pendingObjects.clear();
-        for (var mapObject: mapObjects) {
+        for (var mapObject : mapObjects) {
             mapObject.paint(g);
         }
     }
@@ -111,6 +123,10 @@ public class GameMap2D {
 
     public SimpleVector2 positionToTile(SimpleVector2 position) {
         return new SimpleVector2(position.getX() / tileWidth, position.getY() / tileHeight);
+    }
+
+    public SimpleVector2 tileToPosition(int x, int y) {
+        return new SimpleVector2(x * tileWidth + tileWidth / 2f, y * tileHeight + tileHeight / 2f);
     }
 
     public SimpleVector2 positionToMap(SimpleVector2 objectPosition) {

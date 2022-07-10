@@ -47,7 +47,7 @@ public abstract class Tank extends MapObject2D {
         }
         SimpleVector2 desiredTilePosition = map.positionToTile(desiredPosition);
         if (desiredPosition.getX() >= 0 && desiredPosition.getY() >= 0 && desiredPosition.getX() < map.getWidth() && desiredPosition.getY() < map.getHeight()
-                && map.getMapData().getTile((int) desiredTilePosition.getX(), (int) desiredTilePosition.getY()) == 0)
+                && map.getMapData().getTile((int) desiredTilePosition.getX(), (int) desiredTilePosition.getY()) == 0 || map.getMapData().getTile((int) desiredTilePosition.getX(), (int) desiredTilePosition.getY()) == 12)
             position.set(desiredPosition);
     }
 }
