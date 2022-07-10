@@ -3,6 +3,7 @@ package Game;
 import javax.swing.*;
 
 public class GameWindow extends JFrame {
+    public static final boolean DEBUG = false;
 
     public GameWindow() {
         super("Tanks game");

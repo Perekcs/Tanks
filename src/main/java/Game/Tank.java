@@ -7,8 +7,6 @@ public abstract class Tank extends MapObject2D {
     private int hp;
     private final int speed;
     private byte direction;
-    //private SimpleVector2 position;
-
 
     protected Tank(GameMap2D map, int hp, int speed, byte direction, SimpleVector2 position) {
         super(map, new SimpleVector2(32, 32), position);
@@ -40,17 +38,16 @@ public abstract class Tank extends MapObject2D {
     }
 
     public void move() {
-        SimpleVector2 tilePosition = map.positionToTile(position);
-        SimpleVector2 desiredPosition = position;
+        SimpleVector2 desiredPosition = position.clone();
         switch (direction) {
-            case 0 -> desiredPosition.move(0, -1);
-            case 1 -> desiredPosition.move(1, 0);
-            case 2 -> desiredPosition.move(0, 1);
-            case 3 -> desiredPosition.move(-1, 0);
+            case 0 -> desiredPosition.move(0, -1 * speed);
+            case 1 -> desiredPosition.move(speed, 0);
+            case 2 -> desiredPosition.move(0, speed);
+            case 3 -> desiredPosition.move(-1 * speed, 0);
         }
-        if (desiredPosition.getX() >= 0 && desiredPosition.getY() >= 0 && desiredPosition.getX() <= 640 && desiredPosition.getY() <= 640) {
+        SimpleVector2 desiredTilePosition = map.positionToTile(desiredPosition);
+        if (desiredPosition.getX() >= 0 && desiredPosition.getY() >= 0 && desiredPosition.getX() < map.getWidth() && desiredPosition.getY() < map.getHeight()
+                && map.getMapData().getTile((int) desiredTilePosition.getX(), (int) desiredTilePosition.getY()) == 0)
             position.set(desiredPosition);
-        }
-
     }
 }

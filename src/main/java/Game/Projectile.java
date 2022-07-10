@@ -17,9 +17,9 @@ public class Projectile extends MapObject2D {
     @Override
     public void paint(Graphics g) {
         switch (direction) {
-            case 0 -> position.move(0, 1 * speed);
+            case 0 -> position.move(0, -1 * speed);
             case 1 -> position.move(1 * speed, 0);
-            case 2 -> position.move(0, -1 * speed);
+            case 2 -> position.move(0, 1 * speed);
             case 3 -> position.move(-1 * speed, 0);
         }
         g.setColor(Color.RED);
@@ -33,8 +33,10 @@ public class Projectile extends MapObject2D {
             destroy();
             return;
         }
-        g.setColor(map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) != 0 ? GameMap2D.COLLISION_COLOR : GameMap2D.COLLIDER_COLOR);
-        SimpleVector2 mapPos = map.positionToMap(position);
-        g.fillRect((int) mapPos.getX(), (int) mapPos.getY(), map.getTileWidth(), map.getTileHeight());
+        if(GameWindow.DEBUG) {
+            g.setColor(map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) != 0 ? GameMap2D.COLLISION_COLOR : GameMap2D.COLLIDER_COLOR);
+            SimpleVector2 mapPos = map.positionToMap(position);
+            g.fillRect((int) mapPos.getX(), (int) mapPos.getY(), map.getTileWidth(), map.getTileHeight());
+        }
     }
 }

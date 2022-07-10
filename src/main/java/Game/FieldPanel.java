@@ -30,9 +30,7 @@ public class FieldPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         Toolkit.getDefaultToolkit().sync();
-        System.out.printf("\ro-%b w-%d h-%d",isOptimizedDrawingEnabled(), getWidth(), getHeight());
         super.paintComponent(g);
-        // TODO: render field
         gameMap.paint(g);
     }
 

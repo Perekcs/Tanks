@@ -17,6 +17,7 @@ public class GameMap2D {
     public static final Color COLLIDER_COLOR = new Color(30, 255, 255, 124);
     public static final Color COLLISION_COLOR = new Color(255, 234, 5, 157);
     private final LinkedList<MapObject2D> markedForRemoval;
+    private final LinkedList<MapObject2D> pendingObjects;
     private final LinkedList<MapObject2D> mapObjects;
 
     public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler) {
@@ -29,6 +30,7 @@ public class GameMap2D {
         tanks = loadTanks();
         mapObjects = new LinkedList<>();
         markedForRemoval = new LinkedList<>();
+        pendingObjects = new LinkedList<>();
         addMapObject(new Projectile(this, new SimpleVector2(0, 100), 2F, (byte) 1, false));
         addMapObject(new Projectile(this, new SimpleVector2(50, 100), 2F, (byte) 1, false));
         addMapObject(new Projectile(this, new SimpleVector2(0, 200), 2F, (byte) 1, false));
@@ -79,6 +81,8 @@ public class GameMap2D {
         }
         mapObjects.removeAll(markedForRemoval);
         markedForRemoval.clear();
+        mapObjects.addAll(pendingObjects);
+        pendingObjects.clear();
         for (var mapObject: mapObjects) {
             mapObject.paint(g);
         }
@@ -105,7 +109,7 @@ public class GameMap2D {
     }
 
     public void addMapObject(MapObject2D object2D) {
-        mapObjects.add(Objects.requireNonNull(object2D));
+        pendingObjects.add(Objects.requireNonNull(object2D));
     }
 
     public void removeMapObject(MapObject2D object2D) {

@@ -1,6 +1,6 @@
 package Game;
 
-public class SimpleVector2 {
+public class SimpleVector2 implements Cloneable {
     private float x;
     private float y;
 
@@ -13,20 +13,22 @@ public class SimpleVector2 {
         this.y = y;
     }
 
-    public SimpleVector2 move(SimpleVector2 delta) {
-        return move(delta.x, delta.y);
+    public SimpleVector2(SimpleVector2 vector) {
+        this(vector.x, vector.y);
     }
 
-    public SimpleVector2 move(float deltaX, float deltaY) {
+    public void move(SimpleVector2 delta) {
+        move(delta.x, delta.y);
+    }
+
+    public void move(float deltaX, float deltaY) {
         x += deltaX;
         y += deltaY;
-        return this;
     }
 
-    public SimpleVector2 set(SimpleVector2 vector) {
+    public void set(SimpleVector2 vector) {
         this.x = vector.x;
         this.y = vector.y;
-        return this;
     }
 
     public float getX() {
@@ -43,5 +45,10 @@ public class SimpleVector2 {
 
     public void setY(float y) {
         this.y = y;
+    }
+
+    @Override
+    public SimpleVector2 clone() {
+        return new SimpleVector2(this);
     }
 }
