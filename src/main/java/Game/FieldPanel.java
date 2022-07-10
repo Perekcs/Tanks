@@ -13,7 +13,7 @@ public class FieldPanel extends JPanel {
         return SIZE;
     }
 
-    public FieldPanel() {
+    public FieldPanel(InputHandler inputHandler) {
         super();
         setBackground(Color.BLACK);
         Map map;
@@ -22,7 +22,7 @@ public class FieldPanel extends JPanel {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        gameMap = new GameMap2D(map, SIZE.width, SIZE.height);
+        gameMap = new GameMap2D(map, SIZE.width, SIZE.height, inputHandler);
         Timer updateTimer = new Timer(10, e -> update());
         updateTimer.start();
     }

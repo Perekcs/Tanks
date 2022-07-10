@@ -19,7 +19,7 @@ public class GameMap2D {
     private final LinkedList<MapObject2D> markedForRemoval;
     private final LinkedList<MapObject2D> mapObjects;
 
-    public GameMap2D(Map mapData, int width, int height) {
+    public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler) {
         this.mapData = mapData;
         this.width = width;
         this.height = height;
@@ -36,6 +36,7 @@ public class GameMap2D {
         addMapObject(new Projectile(this, new SimpleVector2(0, 400), 2F, (byte) 1, false));
         addMapObject(new Projectile(this, new SimpleVector2(0, 500), 2F, (byte) 1, false));
         addMapObject(new Projectile(this, new SimpleVector2(0, 600), 2F, (byte) 1, false));
+        addMapObject(new PlayerTank(this, 1, 2, (byte) 1, new SimpleVector2(50, 50), tanks[1], inputHandler));
     }
 
     private Image[] loadTiles() {

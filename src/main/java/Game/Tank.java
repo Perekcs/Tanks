@@ -7,14 +7,14 @@ public abstract class Tank extends MapObject2D {
     private int hp;
     private final int speed;
     private byte direction;
-    private SimpleVector2 position;
+    //private SimpleVector2 position;
 
 
     protected Tank(GameMap2D map, int hp, int speed, byte direction, SimpleVector2 position) {
         super(map, new SimpleVector2(32, 32), position);
         this.hp = hp;
-        this.speed =speed;
-        this.direction =direction;
+        this.speed = speed;
+        this.direction = direction;
     }
 
     public int getHp() {
@@ -34,16 +34,23 @@ public abstract class Tank extends MapObject2D {
     }
 
     protected void setDirection(byte direction) {
-        if(direction > 3 || direction < 0)
+        if (direction > 3 || direction < 0)
             throw new IllegalArgumentException();
         this.direction = direction;
     }
-    public void move (){
+
+    public void move() {
+        SimpleVector2 tilePosition = map.positionToTile(position);
+        SimpleVector2 desiredPosition = position;
         switch (direction) {
-            case 0 -> position.move(0, 1);
-            case 1 -> position.move(1, 0);
-            case 2 -> position.move(0, -1);
-            case 3 -> position.move(-1, 0);
+            case 0 -> desiredPosition.move(0, 1);
+            case 1 -> desiredPosition.move(1, 0);
+            case 2 -> desiredPosition.move(0, -1);
+            case 3 -> desiredPosition.move(-1, 0);
         }
+        if (desiredPosition.getX() >= 0 && desiredPosition.getY() >= 0 && desiredPosition.getX() <= 640 && desiredPosition.getY() <= 640) {
+            position.set(desiredPosition);
+        }
+
     }
 }
