@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/FieldPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/FieldPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameMap2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameMap2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/InputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/PlayerTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/PlayerTank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Projectile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/SimpleVector2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/SimpleVector2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/TestMapObject.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,5 +110,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
