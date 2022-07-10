@@ -23,6 +23,12 @@ public class SimpleVector2 {
         return this;
     }
 
+    public SimpleVector2 set(SimpleVector2 vector) {
+        this.x = vector.x;
+        this.y = vector.y;
+        return this;
+    }
+
     public float getX() {
         return x;
     }
