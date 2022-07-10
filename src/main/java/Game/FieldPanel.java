@@ -18,7 +18,7 @@ public class FieldPanel extends JPanel {
         setBackground(Color.BLACK);
         Map map;
         try {
-            map = Map.fromMapFolder("test_map_2");
+            map = Map.fromMapFolder("test_level_map_3");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

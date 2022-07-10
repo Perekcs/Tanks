@@ -39,11 +39,11 @@ public class GameMap2D {
             for (int x = 0; x < mapData.getWidth(); x++)
                 if (mapData.getTile(x, y) == 14) {
                     mapData.setTile(x, y, 0);
-                    addMapObject(new PlayerTank(this, 1, 2, (byte) 1, tileToPosition(x, y), tanks[1], inputHandler));
+                    addMapObject(new PlayerTank(this, 1, 3, (byte) 1, tileToPosition(x, y), tanks[1], inputHandler));
                     return;
                 }
         mapData.setTile(0, 0, 0);
-        addMapObject(new PlayerTank(this, 1, 2, (byte) 1, tileToPosition(0, 0), tanks[1], inputHandler));
+        addMapObject(new PlayerTank(this, 1, 3, (byte) 1, tileToPosition(0, 0), tanks[1], inputHandler));
     }
 
     private Image[] loadTiles() {

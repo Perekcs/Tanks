@@ -23,15 +23,18 @@ public class Projectile extends MapObject2D {
             case 3 -> position.move(-1 * speed, 0);
         }
         g.setColor(Color.RED);
-        g.fillRect((int) getPosition().getX(), (int) getPosition().getY(), (int) size.getX(), (int) size.getY());
+        g.fillRect((int) (getPosition().getX() - size.getX() / 2), (int) (getPosition().getY() - size.getY() / 2), (int) size.getX(), (int) size.getY());
         SimpleVector2 tilePos = map.positionToTile(position);
         if (!map.getMapData().isValidTile((int) tilePos.getX(), (int) tilePos.getY())) {
             destroy();
             return;
-        } else if (map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) == 5) {
-            map.getMapData().setTile((int) tilePos.getX(), (int) tilePos.getY(), 0);
-            destroy();
-            return;
+        } else {
+            int tile = map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY());
+            if(tile > 0 && tile < 6) {
+                map.getMapData().setTile((int) tilePos.getX(), (int) tilePos.getY(), 0);
+                destroy();
+            } else if(tile != 0 && tile != 11)
+                destroy();
         }
         if(GameWindow.DEBUG) {
             g.setColor(map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) != 0 ? GameMap2D.COLLISION_COLOR : GameMap2D.COLLIDER_COLOR);
