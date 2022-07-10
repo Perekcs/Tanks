@@ -16,7 +16,12 @@ public class InputHandler implements KeyListener {
     }
 
     public int getMoveHorizontal() {
-        return moveHorizontal;
+        if(moveVertical == 0){
+            return moveHorizontal;
+        }else{
+            return 0 ;
+        }
+
     }
     public int getMoveVertical() {
         return moveVertical;
@@ -24,18 +29,19 @@ public class InputHandler implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (VK_W == e.getKeyCode()){
+        if (VK_W == e.getKeyCode()) {
             moveVertical = -1;
         }
-        if  (VK_S == e.getKeyCode()){
-           moveVertical = 1;
+        if (VK_S == e.getKeyCode()) {
+            moveVertical = 1;
         }
-        if (VK_D == e.getKeyCode()){
+        if (VK_D == e.getKeyCode()) {
             moveHorizontal = 1;
         }
-        if (VK_A == e.getKeyCode()){
+        if (VK_A == e.getKeyCode()) {
             moveHorizontal = -1;
         }
+
     }
 
     @Override
@@ -52,6 +58,5 @@ public class InputHandler implements KeyListener {
         if (VK_A == e.getKeyCode()){
             moveHorizontal = 0;
         }
-
     }
 }
