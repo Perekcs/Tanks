@@ -43,9 +43,9 @@ public abstract class Tank extends MapObject2D {
         SimpleVector2 tilePosition = map.positionToTile(position);
         SimpleVector2 desiredPosition = position;
         switch (direction) {
-            case 0 -> desiredPosition.move(0, 1);
+            case 0 -> desiredPosition.move(0, -1);
             case 1 -> desiredPosition.move(1, 0);
-            case 2 -> desiredPosition.move(0, -1);
+            case 2 -> desiredPosition.move(0, 1);
             case 3 -> desiredPosition.move(-1, 0);
         }
         if (desiredPosition.getX() >= 0 && desiredPosition.getY() >= 0 && desiredPosition.getX() <= 640 && desiredPosition.getY() <= 640) {

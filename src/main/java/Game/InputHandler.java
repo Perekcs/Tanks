@@ -30,10 +30,10 @@ public class InputHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (VK_W == e.getKeyCode()) {
-            moveVertical = -1;
+            moveVertical = 1;
         }
         if (VK_S == e.getKeyCode()) {
-            moveVertical = 1;
+            moveVertical = -1;
         }
         if (VK_D == e.getKeyCode()) {
             moveHorizontal = 1;

@@ -7,6 +7,8 @@
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/PlayerTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/PlayerTank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Tank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
       <updated>1657292778998</updated>
       <workItem from="1657292781021" duration="37000" />
       <workItem from="1657293241750" duration="591000" />
-      <workItem from="1657452601591" duration="18765000" />
+      <workItem from="1657452601591" duration="22381000" />
     </task>
     <servers />
   </component>
