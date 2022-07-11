@@ -6,12 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Menu extends JPanel {
-    JButton button1;
-    JButton button2;
-    JButton button3;
-    String level;
     private final GameWindow window;
-
 
     public Menu(GameWindow window) {
         super();

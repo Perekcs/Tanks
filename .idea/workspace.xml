@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_07_2022_12_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_07_2022_12_36__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_07_2022_12_36__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_07_2022_12_36__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +92,7 @@
       <workItem from="1657292781021" duration="37000" />
       <workItem from="1657293241750" duration="591000" />
       <workItem from="1657452601591" duration="22381000" />
-      <workItem from="1657534204332" duration="348000" />
+      <workItem from="1657534204332" duration="407000" />
     </task>
     <servers />
   </component>
