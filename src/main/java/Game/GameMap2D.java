@@ -20,6 +20,7 @@ public class GameMap2D {
     private final LinkedList<MapObject2D> markedForRemoval;
     private final LinkedList<MapObject2D> pendingObjects;
     private final LinkedList<MapObject2D> mapObjects;
+    int enemies;
 
     public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler) {
         this.mapData = mapData;
@@ -52,6 +53,7 @@ public class GameMap2D {
         for (int y = 0; y < mapData.getHeight(); y++)
             for (int x = 0; x < mapData.getWidth(); x++)
                 if (mapData.getTile(x, y) == 15) {
+                    enemies++;
                     mapData.setTile(x, y, 0);
                     addMapObject(new EnemyTank(this, 1, 3, (byte) 1, tileToPosition(x, y), tanks[4]));
                 }
@@ -139,6 +141,14 @@ public class GameMap2D {
 
     public void removeMapObject(MapObject2D object2D) {
         markedForRemoval.add(object2D);
+        if (object2D instanceof PlayerTank){
+            System.out.println("You lose");
+        } else if (object2D instanceof EnemyTank) {
+            int enemiesLeft = enemies--;
+            if(enemies == 0){
+                System.out.println("You won");
+            }
+        }
     }
 
     public SimpleVector2 positionToTile(SimpleVector2 position) {

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b284e8-10bc-4797-b052-2b9e4de60baf" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_2022_1_10_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_2022_1_10_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/GameMap2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameMap2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/maps/test_level_map_3.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/maps/test_level_map_3.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/maps/test_level_map_5.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/maps/test_level_map_5.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,6 @@
       <workItem from="1657292781021" duration="37000" />
       <workItem from="1657293241750" duration="591000" />
       <workItem from="1657452601591" duration="22381000" />
-      <workItem from="1657534204332" duration="407000" />
     </task>
     <servers />
   </component>
@@ -116,10 +119,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
-          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
