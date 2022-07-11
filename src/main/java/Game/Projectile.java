@@ -1,6 +1,7 @@
 package Game;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 public class Projectile extends MapObject2D {
     private final boolean isPlayerProjectile;
@@ -35,6 +36,21 @@ public class Projectile extends MapObject2D {
                 destroy();
             } else if(tile != 0 && tile != 11)
                 destroy();
+            else
+            {
+                LinkedList<MapObject2D> objectsOnTile = map.getObjectsOnPosition(position);
+                if(objectsOnTile.size() < 1)
+                    return;
+                for (var object: objectsOnTile) {
+                    if(object == this)
+                        continue;
+                    if(isPlayerProjectile && object instanceof EnemyTank e)
+                        e.destroy();
+                    else if (!isPlayerProjectile && object instanceof PlayerTank p)
+                        p.destroy();
+                }
+
+            }
         }
         if(GameWindow.DEBUG) {
             g.setColor(map.getMapData().getTile((int) tilePos.getX(), (int) tilePos.getY()) != 0 ? GameMap2D.COLLISION_COLOR : GameMap2D.COLLIDER_COLOR);

@@ -3,6 +3,7 @@ package Game;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
+import java.text.AttributedCharacterIterator;
 import java.util.LinkedList;
 import java.util.Objects;
 
@@ -20,7 +21,7 @@ public class GameMap2D {
     private final LinkedList<MapObject2D> pendingObjects;
     private final LinkedList<MapObject2D> mapObjects;
 
-    public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler, Bot bot) {
+    public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler) {
         this.mapData = mapData;
         this.width = width;
         this.height = height;
@@ -31,10 +32,11 @@ public class GameMap2D {
         mapObjects = new LinkedList<>();
         markedForRemoval = new LinkedList<>();
         pendingObjects = new LinkedList<>();
-        spawnPlayer(inputHandler, bot);
+        spawnPlayer(inputHandler);
+        spawnBots();
     }
 
-    private void spawnPlayer(InputHandler inputHandler, Bot bot) {
+    private void spawnPlayer(InputHandler inputHandler) {
         for (int y = 0; y < mapData.getHeight(); y++)
             for (int x = 0; x < mapData.getWidth(); x++)
                 if (mapData.getTile(x, y) == 14) {
@@ -44,7 +46,15 @@ public class GameMap2D {
                 }
         mapData.setTile(0, 0, 0);
         addMapObject(new PlayerTank(this, 1, 3, (byte) 1, tileToPosition(0, 0), tanks[1], inputHandler));
-        addMapObject(new EnemyTank(this, 1, 3, (byte) 1, tileToPosition(0, 0),tanks[7], bot));
+    }
+
+    private void spawnBots() {
+        for (int y = 0; y < mapData.getHeight(); y++)
+            for (int x = 0; x < mapData.getWidth(); x++)
+                if (mapData.getTile(x, y) == 15) {
+                    mapData.setTile(x, y, 0);
+                    addMapObject(new EnemyTank(this, 1, 3, (byte) 1, tileToPosition(x, y), tanks[4]));
+                }
     }
 
     private Image[] loadTiles() {
@@ -83,6 +93,12 @@ public class GameMap2D {
             for (int x = 0; x < mapData.getWidth(); x++) {
                 Image tile = tiles[mapData.getTile(x, y)];
                 g.drawImage(tile, tileWidth * x, tileHeight * y, tileWidth, tileHeight, null);
+                g.setColor(Color.MAGENTA);
+                if(GameWindow.DEBUG) {
+                    SimpleVector2 pos = tileToPosition(x, y);
+                    var objects = getObjectsOnPosition(pos);
+                    g.drawString(String.valueOf(objects.size()), (int) pos.getX(), (int) pos.getY());
+                }
             }
         }
         mapObjects.removeAll(markedForRemoval);
@@ -92,6 +108,9 @@ public class GameMap2D {
         for (var mapObject : mapObjects) {
             mapObject.paint(g);
         }
+
+
+
     }
 
     public Map getMapData() {
@@ -128,6 +147,19 @@ public class GameMap2D {
 
     public SimpleVector2 tileToPosition(int x, int y) {
         return new SimpleVector2(x * tileWidth + tileWidth / 2f, y * tileHeight + tileHeight / 2f);
+    }
+
+    public LinkedList<MapObject2D> getObjectsOnPosition(SimpleVector2 tile) {
+        LinkedList<MapObject2D> objects = new LinkedList<>();
+        tile = positionToTile(tile);
+        for (var object: mapObjects) {
+            SimpleVector2 mapPos = positionToTile(object.position);
+            // System.out.println(object + "::" + mapPos + "::" + tile);
+            if((int)mapPos.getX() == (int)tile.getX() && (int)mapPos.getY() == (int)tile.getY() )
+                objects.add(object);
+        }
+        // System.out.println(objects);
+        return objects;
     }
 
     public SimpleVector2 positionToMap(SimpleVector2 objectPosition) {

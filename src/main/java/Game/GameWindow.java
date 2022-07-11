@@ -8,9 +8,8 @@ public class GameWindow extends JFrame {
     public GameWindow() {
         super("Tanks game");
         InputHandler inputHandler = new InputHandler();
-        Bot bot = new Bot();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setContentPane(new FieldPanel(inputHandler, bot));
+        setContentPane(new FieldPanel(inputHandler));
         addKeyListener(inputHandler);
         setResizable(false);
         pack();

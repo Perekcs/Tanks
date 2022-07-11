@@ -2,49 +2,51 @@ package Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 public class EnemyTank extends Tank {
-    private final Bot bot;
     private final BufferedImage image;
     private final BufferedImage rotatedImage;
 
     private int cd;
-    private static final int SHOOTING_INTERVAL = 50;
+    private int dir_cd;
+    private final Random random;
+    private static final int SHOOTING_INTERVAL = 60;
+    private static final int CHANGE_DIRECTION_INTERVAL = 250;
     
-    protected EnemyTank(GameMap2D map, int hp, int speed, byte direction, SimpleVector2 position, Image image, Bot bot) {
+    protected EnemyTank(GameMap2D map, int hp, int speed, byte direction, SimpleVector2 position, Image image) {
         super(map, hp, speed, direction, position);
         this.image = (BufferedImage) image;
-        this.bot = bot;
         rotatedImage = new BufferedImage(this.image.getWidth(), this.image.getHeight(), BufferedImage.TYPE_INT_RGB);
         setDirection(direction);
-
-        cd = 0;
+        random = new Random();
+        dir_cd = cd = 0;
     }
 
     @Override
     public void paint(Graphics g) {
         g.drawImage(rotatedImage, (int) (position.getX() - size.getX() / 2), (int) (position.getY() - size.getY() / 2), (int) size.getX(), (int) size.getY(), null);
 
-        if (bot.getMoveBotHorizontal() == 1)
-            setDirection((byte) 1);
-        else if (bot.getMoveBotHorizontal() == -1)
-            setDirection((byte) 3);
+        if(dir_cd < 0) {
+            setDirection((byte) (random.nextInt(100) % 4));
+            dir_cd = CHANGE_DIRECTION_INTERVAL;
+        }
 
-        if (bot.getMoveBotVertical() == 1)
-            setDirection((byte) 0);
-        else if (bot.getMoveBotVertical() == -1)
-            setDirection((byte) 2);
-
-        if(cd > 0)
-            cd--;
-        if(cd <= 0 && bot.isFiring())
+        if(cd <= 0)
             fire();
+
+        cd--;
+        dir_cd--;
+
+        if(!move())
+            dir_cd -= CHANGE_DIRECTION_INTERVAL / 5;
     }
 
     private void fire() {
-        map.addMapObject(new Projectile(map, position.clone(), 7, getDirection(), true));
+        map.addMapObject(new Projectile(map, position.clone(), 5, getDirection(), false));
         cd = SHOOTING_INTERVAL;
     }
+
     @Override
     protected void setDirection(byte direction) {
         super.setDirection(direction);

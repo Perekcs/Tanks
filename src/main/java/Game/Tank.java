@@ -37,7 +37,7 @@ public abstract class Tank extends MapObject2D {
         this.direction = direction;
     }
 
-    public void move() {
+    public boolean move() {
         SimpleVector2 desiredPosition = position.clone();
         switch (direction) {
             case 0 -> desiredPosition.move(0, -1 * speed);
@@ -51,8 +51,11 @@ public abstract class Tank extends MapObject2D {
             int tileX = (int) desiredTilePosition.getX();
             int tileY = (int) desiredTilePosition.getY();
             Map mapData = map.getMapData();
-            if(mapData.isValidTile(tileX, tileY) && mapData.getTile(tileX, tileY) == 0 || mapData.getTile(tileX, tileY) == 12)
+            if(mapData.isValidTile(tileX, tileY) && mapData.getTile(tileX, tileY) == 0 || mapData.getTile(tileX, tileY) == 12) {
                 position.set(desiredPosition);
+                return true;
+            }
         }
+        return false;
     }
 }
