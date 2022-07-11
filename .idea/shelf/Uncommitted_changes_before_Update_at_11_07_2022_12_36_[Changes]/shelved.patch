@@ -1,0 +1,62 @@
+Index: src/main/java/Game/Bot.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Game;\r\n\r\npublic class Bot {\r\n    private int moveBotHorizontal = 0;\r\n    private int moveBotVertical = 0;\r\n    private boolean isFiring = false;\r\n\r\n    public int getMoveBotHorizontal() {\r\n        return moveBotHorizontal;\r\n    }\r\n\r\n    public int getMoveBotVertical() {\r\n        return moveBotVertical;\r\n    }\r\n\r\n    Bot() {\r\n        int number;\r\n        number = (int) (Math.random() * 100);\r\n        if (number <= 25) {\r\n            moveBotVertical = 1;\r\n            System.out.println(number);\r\n        } else if (number <= 50) {\r\n            moveBotHorizontal = 1;\r\n            System.out.println(number);\r\n        } else if (number <= 75) {\r\n            moveBotVertical = -1;\r\n            System.out.println(number);\r\n        } else if (number <= 100) {\r\n            moveBotHorizontal = 1;\r\n            System.out.println(number);\r\n        }\r\n\r\n        if (number%2 == 1){\r\n            isFiring =true;\r\n        }\r\n    }\r\n\r\n    public boolean isFiring() {\r\n        return isFiring;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/Game/Bot.java b/src/main/java/Game/Bot.java
+--- a/src/main/java/Game/Bot.java	
++++ b/src/main/java/Game/Bot.java	
+@@ -1,5 +1,7 @@
+ package Game;
+ 
++import javax.swing.*;
++
+ public class Bot {
+     private int moveBotHorizontal = 0;
+     private int moveBotVertical = 0;
+@@ -15,24 +17,29 @@
+ 
+     Bot() {
+         int number;
+-        number = (int) (Math.random() * 100);
+-        if (number <= 25) {
+-            moveBotVertical = 1;
+-            System.out.println(number);
+-        } else if (number <= 50) {
+-            moveBotHorizontal = 1;
+-            System.out.println(number);
+-        } else if (number <= 75) {
+-            moveBotVertical = -1;
+-            System.out.println(number);
+-        } else if (number <= 100) {
+-            moveBotHorizontal = 1;
+-            System.out.println(number);
+-        }
++
++        while(){
++            number = (int) (Math.random() * 100);
++            if (number <= 25) {
++                moveBotVertical = 1;
++                System.out.println(number);
++            } else if (number <= 50) {
++                moveBotHorizontal = 1;
++                System.out.println(number);
++            } else if (number <= 75) {
++                moveBotVertical = -1;
++                System.out.println(number);
++            } else if (number <= 100) {
++                moveBotHorizontal = 1;
++                System.out.println(number);
++            }
+ 
+-        if (number%2 == 1){
+-            isFiring =true;
++            if (number%2 == 1){
++                isFiring =true;
++            }
++
+         }
++
+     }
+ 
+     public boolean isFiring() {

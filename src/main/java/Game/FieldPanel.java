@@ -13,12 +13,12 @@ public class FieldPanel extends JPanel {
         return SIZE;
     }
 
-    public FieldPanel(InputHandler inputHandler) {
+    public FieldPanel(InputHandler inputHandler, String level) {
         super();
         setBackground(Color.BLACK);
         Map map;
         try {
-            map = Map.fromMapFolder("test_level_map_4");
+            map = Map.fromMapFolder(level);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
