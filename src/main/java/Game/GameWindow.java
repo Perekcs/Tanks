@@ -4,16 +4,23 @@ import javax.swing.*;
 
 public class GameWindow extends JFrame {
     public static final boolean DEBUG = false;
-    Menu level = new Menu();
+    private final InputHandler input;
+
     public GameWindow() {
         super("Tanks game");
-        InputHandler inputHandler = new InputHandler();
+        input = new InputHandler();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setContentPane(new FieldPanel(inputHandler,level.level));
-        addKeyListener(inputHandler);
+        setContentPane(new Menu(this));
+        addKeyListener(input);
         setResizable(false);
         pack();
         setVisible(true);
+    }
+
+    public void load(String level) {
+        setContentPane(new FieldPanel(input, level));
+        pack();
+        requestFocus();
     }
 
 }

@@ -5,48 +5,33 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Menu extends JPanel implements ActionListener {
-    JPanel panel = new JPanel();
+public class Menu extends JPanel {
     JButton button1;
     JButton button2;
     JButton button3;
     String level;
+    private final GameWindow window;
 
 
-    public Menu(){
-        //panel.setLayout();
-        panel.setBackground(Color.DARK_GRAY);
-        button1 = new JButton(" Level 1");
-        button1.setLocation(320, 50);
-        button1.setSize(100,50);
-        button1.addActionListener(this);
+    public Menu(GameWindow window) {
+        super();
+        this.window = window;
+        setBackground(Color.DARK_GRAY);
+        String[] levels = new String[]{
+                "test_level_map_3",
+                "test_level_map_4",
+                "test_level_map_5"
+        };
 
-        button2 = new JButton(" Level 2");
-        button2.setLocation(320, 150);
-        button2.setSize(100,50);
-        button2.addActionListener(this);
-
-        button3 = new JButton(" Level 3");
-        button3.setLocation(320, 250);
-        button3.setSize(100,50);
-        button3.addActionListener(this);
-
-
-        panel.add(button1);
-        panel.add(button2);
-        panel.add(button3);
+        for(int i = 0; i < levels.length; i++) {
+            var button = new JButton("Level " + (i + 1));
+            int finalI = i;
+            button.addActionListener(e -> loadLevel(levels[finalI]));
+            add(button);
+        }
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == button1){
-            level = "test_level_map_3";
-        }
-        if(e.getSource() == button1){
-            level = "test_level_map_4";
-        }
-        if(e.getSource() == button1){
-            level = "test_level_map_5";
-        }
+    private void loadLevel(String level) {
+        window.load(level);
     }
 }
