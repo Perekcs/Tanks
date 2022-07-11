@@ -19,6 +19,7 @@ public class InputHandler implements KeyListener {
     public int getMoveHorizontal() {
         return moveVertical != 0 ? 0 : moveHorizontal;
     }
+
     public int getMoveVertical() {
         return moveVertical;
     }

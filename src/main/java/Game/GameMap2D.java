@@ -20,7 +20,7 @@ public class GameMap2D {
     private final LinkedList<MapObject2D> pendingObjects;
     private final LinkedList<MapObject2D> mapObjects;
 
-    public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler) {
+    public GameMap2D(Map mapData, int width, int height, InputHandler inputHandler, Bot bot) {
         this.mapData = mapData;
         this.width = width;
         this.height = height;
@@ -31,10 +31,10 @@ public class GameMap2D {
         mapObjects = new LinkedList<>();
         markedForRemoval = new LinkedList<>();
         pendingObjects = new LinkedList<>();
-        spawnPlayer(inputHandler);
+        spawnPlayer(inputHandler, bot);
     }
 
-    private void spawnPlayer(InputHandler inputHandler) {
+    private void spawnPlayer(InputHandler inputHandler, Bot bot) {
         for (int y = 0; y < mapData.getHeight(); y++)
             for (int x = 0; x < mapData.getWidth(); x++)
                 if (mapData.getTile(x, y) == 14) {
@@ -44,6 +44,7 @@ public class GameMap2D {
                 }
         mapData.setTile(0, 0, 0);
         addMapObject(new PlayerTank(this, 1, 3, (byte) 1, tileToPosition(0, 0), tanks[1], inputHandler));
+        addMapObject(new EnemyTank(this, 1, 3, (byte) 1, tileToPosition(0, 0),tanks[7], bot));
     }
 
     private Image[] loadTiles() {
